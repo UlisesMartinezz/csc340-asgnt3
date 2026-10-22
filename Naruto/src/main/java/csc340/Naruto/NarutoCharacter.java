@@ -12,10 +12,10 @@ public class NarutoCharacter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank 
+    @NotBlank(message = "Character name is required")
     private String name;
 
-    @NotBlank 
+    @NotBlank(message = "Character description is required")
     private String description;
 
     @NotNull 
@@ -25,7 +25,7 @@ public class NarutoCharacter {
     private String rank; 
 
     public NarutoCharacter(){
-        
+
     }
 
     //id

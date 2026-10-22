@@ -1,0 +1,5 @@
+package csc340.Naruto;
+
+public enum Village {
+    KONOHAGAKURE, SUNAGAKURE, KUMOGAKURE, IWAGAKURE, KIRIGAKURE, OTHER
+}

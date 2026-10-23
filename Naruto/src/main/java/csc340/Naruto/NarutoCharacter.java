@@ -43,7 +43,7 @@ public class NarutoCharacter {
     }
 
     //description
-    public String description(){
+    public String getDescription(){
         return description;
     }
 

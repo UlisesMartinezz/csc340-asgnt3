@@ -32,7 +32,7 @@ public class NarutoController {
         return service.search(name, village); 
     }
     
-    @GetMapping 
+    @GetMapping("/{id}")
     public NarutoCharacter get(@PathVariable Long id){
         return service.findById(id);
     }

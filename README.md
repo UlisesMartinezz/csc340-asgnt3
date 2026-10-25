@@ -136,7 +136,7 @@ Response:
 
 
 ```
-https://csc340-asgnt3.onrender.com
+https://csc340-asgnt3.onrender.com/api/characters
 ```
 
 ### Cold Start Notice

@@ -24,6 +24,8 @@ public class NarutoCharacter {
 
     private String rank; 
 
+    private String imageURL;
+
     public NarutoCharacter(){
 
     }
@@ -67,5 +69,19 @@ public class NarutoCharacter {
 
     public void setRank(String rank){
         this.rank = rank; 
+    }
+
+    //image
+    public String getURL(){
+        return imageURL;
+    }
+
+    public void setURL(String imageURL){
+        this.imageURL = imageURL; 
+    }
+
+    public void setThumbnailUrl(String newFileName) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setThumbnailUrl'");
     }
 }

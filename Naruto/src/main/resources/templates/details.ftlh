@@ -1,49 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naruto</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="/src/main/resources/static/css/styles.css">
-</head>
-<body>
-<!-- header content -->
-    <header>
-        <h1>Naruto</h1>
-    </header>
-<!-- navigation content -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="details.html">Details</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="new-character-form.html">Add a Character</a></li>
-        </ul>
+<import "layout.ftlh" as 1>
+    <@1.page title="Character Details" active="home">
 
-    </nav>
-<!-- main body content -->
-    <main>
-       <img src="images/naruto.jpg" class="details-img" alt="Teenage Naruto Uzamaki in sage mode">
-       <div class="section-title">
-            <h3>Backstory</h3>
-            <p>Naruto Uzamaki grew up as an orphan in the Hidden Leaf Village. He was born with the power of the Nine-Tail Fox sealed inside him. As a result of this, Naruto was shunned by his village but his community. Despite this, he developed an unbreakable determination to be acknowledged and to one day become Hokage. </p>
-       </div>
 
-       <div class="section-title"></div>
-        <h3>First Appearance</h3>
-        <p>Naruto first appears in <em>Naruto</em> episode 1 of the anime (2002).</p>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="${character.imageUrl!'/images/placeholder.svg'}" class="img-fluid rounded shadow" alt="${character.name}">
+            </div>
+            <div class="col-md-8">
+                <h2>${character.name}</h2>
+                <p class="text-muted"><strong>Village:</strong> ${character.village!'Unknown'}</p>
+                <p class="text-muted"><strong>Rank:</strong> ${character.rank!'Unknown'}</p>
+                
+                <hr>
+                
+                <h4>About / Backstory</h4>
+                <p>${character.shortDescription!''}</p>
 
-        <div class="section-title">
-            <h3>Personality Trait</h3>
-            <p>Naruto is energetic, stubborn, loyal and optimistic. He never gives up on his goals or friends, and his compassion often changed the hearts of those around him.</p>
+                <div class="mt-4">
+                    <a href="/characters/${character.characterId?c}/edit" class="btn btn-warning me-2">Edit Character</a>
+                    
+                    <form action="/characters/${character.characterId?c}/delete" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete ${character.name}?');">
+                        <button type="submit" class="btn btn-danger">Delete Character</button>
+                    </form>
+                </div>
+
+                <div class="mt-3">
+                    <a href="/" class="btn btn-secondary">&larr; Back to Gallery</a>
+                </div>
+            </div>
         </div>
-    </main>
-<!-- footer information -->
-    <footer>
-        @copy; 2026 Naruto Character Gallery. Made for school assignment
-    </footer>
-
-    
-</body>
-</html>
+    </div>
+</@l.page>

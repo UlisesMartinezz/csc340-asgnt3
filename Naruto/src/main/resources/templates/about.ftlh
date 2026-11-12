@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naruto</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="/src/main/resources/static/css/styles.css">
-</head>
-<body>
-<!-- header content -->
-    <header>
-        <h1>Naruto</h1>
-    </header>
-<!-- navigation content -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="details.html">Details</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="new-character-form.html">Add a Character</a></li>
-        </ul>
+<import "layout.ftlh" as 1>
+    <@1.page title="About" active="about">
 
-    </nav>
 <!-- main body content -->
-    <main>
+    <main class="container my-5">
         <img src="images/group.jpg" alt="">
         <h1>About Naruto</h1>
         <p>Learn more about the Naruto universe</p>
@@ -40,5 +19,4 @@
     </footer>
 
     
-</body>
-</html>
+</@1.page>

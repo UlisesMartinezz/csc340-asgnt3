@@ -1,66 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naruto</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="/src/main/resources/static/css/styles.css">
-</head>
-<body>
-<!-- header content -->
-    <header>
-        <h1>Naruto</h1>
-    </header>
-<!-- navigation content -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="details.html">Details</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="new-character-form.html">Add a Character</a></li>
-        </ul>
-    </nav>
-<!-- main body content -->
-    <main>
-        <form action="">
-            <h2>Character Information</h2>
-            <!-- Name of character -->
-            <label for="name">Character Name</label>
-            <input type="text" id="name" name="name" placeholder="ex. Naruto Uzamaki">
+<import "layout.ftlh" as 1>
+    <@1.page title="${formTitle!''} ">
 
-            <!-- Universe of character -->
-            <label for="timeline">Timeline</label>
-            <select name="timeline" id="timeline">
-                <option value="part1">Part 1</option>
-                <option value="shippuden">Shippuden</option>
-                <option value="boruto">Boruto</option>
-            </select>
 
-            <!-- Character role -->
-            <label for="role">Role</label>
-            <select name="role" id="role">
-                <option value="hero">Hero</option>
-                <option value="villian">Villian</option>
-                <option value="other">Other</option>
-            </select>
 
-            <!-- image URL -->
-            <label for="image">Image URL</label>
-            <input type="text" id="image" name="image" placeholder="www.example.com/character.jpg">
+    <div class="container my-5" style="max-width: 600px;">
+        <h2 class="mb-4">${formTitle!'Character Form'}</h2>
 
-            <!-- short description -->
-            <label for="description">Short Description</label>
-            <textarea name="description" id="description" placeholder="Write a short 1-2 sentence description about the character"></textarea>
+        <form action="${formAction}" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Character Name:</label>
+                <input type="text" id="name" name="name" class="form-control" value="${character.name!''}" required>
+            </div>
 
-            <button type="submit">Submit</button>
+
+            <div class="mb-3">
+                <label for="village" class="form-label">Village:</label>
+                <select id="village" name="village" class="form-select">
+                    <option value="">-- Select Village --</option>
+                    <option value="KONOHAGAKURE" ${(character.village! == "KONOHAGAKURE")?string('selected', '')}>Konohagakure (Hidden Leaf)</option>
+                    <option value="SUNAGAKURE" ${(character.village! == "SUNAGAKURE")?string('selected', '')}>Sunagakure (Hidden Sand)</option>
+                    <option value="KUMOGAKURE" ${(character.village! == "KUMOGAKURE")?string('selected', '')}>Kumogakure (Hidden Cloud)</option>
+                    <option value="IWAGAKURE" ${(character.village! == "IWAGAKURE")?string('selected', '')}>Iwagakure (Hidden Stone)</option>
+                    <option value="KIRIGAKURE" ${(character.village! == "KIRIGAKURE")?string('selected', '')}>Kirigakure (Hidden Mist)</option>
+                    <option value="OTHER" ${(character.village! == "OTHER")?string('selected', '')}>Other / Rogue</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="rank" class="form-label">Rank:</label>
+                <input type="text" id="rank" name="rank" class="form-control" value="${character.rank!''}">
+            </div>
+
+            <div class="mb-3">
+                <label for="shortDescription" class="form-label">Short Description / Backstory:</label>
+                <textarea id="shortDescription" name="shortDescription" class="form-control" rows="4">${character.shortDescription!''}</textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="imageUrl" class="form-label">Image URL:</label>
+                <input type="text" id="imageUrl" name="imageUrl" class="form-control" value="${character.imageUrl!''}" placeholder="Paste web link or local path">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Character</button>
+            <a href="/" class="btn btn-secondary ms-2">Cancel</a>
         </form>
-    </main>
-<!-- footer information -->
-    <footer>
-        @copy; 2026 Naruto Character Gallery. Made for school assignment
-    </footer>
+    </div>
 
     
-</body>
-</html>
+ </@1.page> 

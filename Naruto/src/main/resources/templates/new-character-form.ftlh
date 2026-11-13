@@ -6,7 +6,7 @@
     <div class="container my-5" style="max-width: 600px;">
         <h2 class="mb-4">${formTitle!'Character Form'}</h2>
 
-        <form action="${formAction}" method="POST">
+        <form action="${formAction}" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="name" class="form-label">Character Name:</label>
                 <input type="text" id="name" name="name" class="form-control" value="${character.name!''}" required>
@@ -41,6 +41,7 @@
                 <input type="text" id="imageUrl" name="imageUrl" class="form-control" value="${character.imageUrl!''}" placeholder="Paste web link or local path">
             </div>
 
+           
             <button type="submit" class="btn btn-primary">Save Character</button>
             <a href="/" class="btn btn-secondary ms-2">Cancel</a>
         </form>

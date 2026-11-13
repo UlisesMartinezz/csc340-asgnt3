@@ -1,5 +1,5 @@
-<import "layout.ftlh" as 1>
-    <@1.page title="About" active="about">
+<#import "layout.ftlh" as l>
+    <@l.page title="About" active="about">
 
 <!-- main body content -->
     <main class="container my-5">
@@ -13,10 +13,7 @@
         <h2>More Details</h2>
         <p>This gallery is dedicated to all characters of naruto. You will be able to find characters from  every arc and even filler stories, so be on the lookout for characters you might not expect!</p>
     </main>
-<!-- footer information -->
-    <footer>
-        @copy; 2026 Naruto Character Gallery. Made for school assignment
-    </footer>
+
 
     
-</@1.page>
+</@l.page>

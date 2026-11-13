@@ -1,5 +1,5 @@
-<import "layout.ftlh" as 1>
-    <@1.page title="Naruto Characters" active="home">
+<#import "layout.ftlh" as l>
+    <@l.page title="Naruto Characters" active="home">
 
 
     <h1 class="mb-4">Naruto Characters</h1>
@@ -31,7 +31,7 @@
                     <img src="${c.imageUrl!'/images/placeholder.svg'}" class="image-character" alt="${c.name}">
                     <h3>${c.name}</h3>
                     <p>${c.shortDescription!''}</p>
-                    <a href="/characters/${c.characterId?c}" class="details-btn">More Details</a>
+                    <a href="/characters/${c.id?c}" class="details-btn">More Details</a>
                 </div>
             <#else>
                 <p class="text-muted">No characters found matching your search criteria.</p>
@@ -40,4 +40,4 @@
 
     
 
-</@1.page> 
+</@l.page> 

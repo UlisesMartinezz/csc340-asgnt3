@@ -1,5 +1,5 @@
-<import "layout.ftlh" as 1>
-    <@1.page title="Character Details" active="home">
+<#import "layout.ftlh" as l>
+    <@l.page title="Character Details" active="home">
 
 
     <div class="container my-5">
@@ -18,9 +18,9 @@
                 <p>${character.shortDescription!''}</p>
 
                 <div class="mt-4">
-                    <a href="/characters/${character.characterId?c}/edit" class="btn btn-warning me-2">Edit Character</a>
+                    <a href="/characters/${character.id?c}/edit" class="btn btn-warning me-2">Edit Character</a>
                     
-                    <form action="/characters/${character.characterId?c}/delete" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete ${character.name}?');">
+                    <form action="/characters/${character.id?c}/delete" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete ${character.name}?');">
                         <button type="submit" class="btn btn-danger">Delete Character</button>
                     </form>
                 </div>

@@ -1,5 +1,5 @@
-<import "layout.ftlh" as 1>
-    <@1.page title="${formTitle!''} ">
+<#import "layout.ftlh" as l>
+    <@l.page title="${formTitle!''} ">
 
 
 
@@ -48,4 +48,4 @@
     </div>
 
     
- </@1.page> 
+ </@l.page> 

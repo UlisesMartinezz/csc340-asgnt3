@@ -1,10 +1,10 @@
-# Naruto Character API
+# Naruto Character API & Web Interface
 
 ## Description
 
-The Naruto Character API is a RESTful Spring Boot application that stores and manages information on Naruto Character
+A Spring Boot application that stores and manages information on Naruto characters. This project includes both a **RESTful JSON API** and a **server-rendered MVC web interface** sharing the same underlying service, repository, and PostgreSQL database.
 
-The API allows users to:
+The application allows users to:
 
 - Create characters
 - Retrieve all characters
@@ -19,6 +19,55 @@ The application uses:
 - Spring Data JPA
 - PostgreSQL (Neon)
 - Render
+
+---
+
+## Tech Stack
+
+| Area | Technology |
+| :--- | :--- |
+| **Language** | Java |
+| **Framework** | Spring Boot (Web, Data JPA, Validation, FreeMarker) |
+| **Database** | PostgreSQL on Neon |
+| **Styling** | Bootstrap 5 |
+| **Build Tool** | Maven |
+| **Deployment** | Render |
+
+---
+
+## Architecture
+
+The application uses a layered architecture with two controller classes serving different clients while sharing the core business logic, repository, and database entity.
+
+```text
+Browser Client  --> NarutoUIController --> FreeMarker Templates (HTML)
+                        |
+JSON Client     --> NarutoController
+                        |
+                 NarutoService
+                        |
+                 NarutoRepository (JPA)
+                        |
+                 NarutoCharacter Entity / PostgreSQL (Neon)
+```
+
+---
+
+## Project Structure
+
+```text
+src/main/java/csc340/Naruto/
+  NarutoController.java
+  NarutoUIController.java
+  NarutoService.java
+  NarutoRepository.java
+  NarutoCharacter.java
+  Village.java (enum)
+src/main/resources/
+  application.properties
+  templates/                 FreeMarker views for the MVC web interface
+  static/css/style.css       Custom web interface styles
+```
 
 ---
 
@@ -40,6 +89,23 @@ The application uses:
 - IWAGAKURE
 - KIRIGAKURE
 - OTHER
+
+---
+
+## MVC Web Interface
+
+Start the application and open `http://localhost:8080/` in your browser to use the web interface.
+
+| Method | Path | Description |
+| :--- | :--- | :--- |
+| **GET** | `/` or `/characters` | Character gallery; optionally filter by `name` and `village` |
+| **GET** | `/characters/new` | Show the add-character form |
+| **POST** | `/characters` | Create a new character |
+| **GET** | `/characters/{id}` | Show character details |
+| **GET** | `/characters/{id}/edit` | Show the edit form for an existing character |
+| **POST** | `/characters/{id}` | Update character details |
+| **POST** | `/characters/{id}/delete` | Delete a character |
+| **GET** | `/about` | Explain the application and its request flow |
 
 ---
 

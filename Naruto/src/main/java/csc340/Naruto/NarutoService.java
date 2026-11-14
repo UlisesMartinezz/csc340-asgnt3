@@ -1,13 +1,24 @@
 package csc340.Naruto;
 
+import org.springframework.stereotype.Service;
+//import org.springframework.web.multipart.MultipartFile;
+
+//import java.io.InputStream;
+// import java.nio.file.Files;
+// import java.nio.file.Path;
+// import java.nio.file.Paths;
+// import java.nio.file.StandardCopyOption;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+
+
 
 
 @Service 
 public class NarutoService {
     private final NarutoRepository repository;
+
+     //private static final String UPLOAD_DIR = "src/main/resources/static/thumbnails/";
 
     public NarutoService(NarutoRepository repository){
         this.repository = repository;
@@ -58,5 +69,22 @@ public class NarutoService {
         findById(id);
         repository.deleteById(id);
     }
+
+    //   public void saveThumbnail(NarutoCharacter character, MultipartFile file) {
+      
+    //     String originalFileName = file.getOriginalFilename();
+    //     try {
+    //         String fileExtension = originalFileName.substring(originalFileName.lastIndexOf(".") + 1);
+    //         String newFileName = "Naruto_" + character.getId() + "." + fileExtension;
+    //         Path path = Paths.get(UPLOAD_DIR + newFileName);
+    //         InputStream inputStream = file.getInputStream();
+    //         Files.createDirectories(Paths.get(UPLOAD_DIR)); // Ensure the directory exists
+    //         Files.copy(inputStream, path, StandardCopyOption.REPLACE_EXISTING);
+    //         character.setThumbnailUrl( newFileName);
+    //         repository.save(character);
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 
 }

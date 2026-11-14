@@ -28,9 +28,9 @@
             </a>
 
             <div>
-                <a href="/" class="nav-link d-inline text-white">Home</a>
+                <a href="/" class="nav-link d-inline text-white me-3">Home</a>
 
-                <a href="/about" class="nav-link d-inline text-white"> About </a>
+                <a href="/about" class="nav-link d-inline text-white me-3"> About </a>
 
                 <a href="/characters/new" class="nav-link d-inline text-white"> Add Character </a>
             </div>

@@ -15,7 +15,7 @@
                 <hr>
                 
                 <h4>About / Backstory</h4>
-                <p>${character.shortDescription!''}</p>
+                <p>${character.description!''}</p>
 
                 <div class="mt-4">
                     <a href="/characters/${character.id?c}/edit" class="btn btn-warning me-2">Edit Character</a>

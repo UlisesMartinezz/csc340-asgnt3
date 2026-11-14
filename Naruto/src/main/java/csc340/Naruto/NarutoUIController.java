@@ -19,7 +19,7 @@ public class NarutoUIController {
     }
 
 // Gallery with search
-@GetMapping({"/", "/characters"  })
+@GetMapping({"/", "/characters"})
 public String gallery(@RequestParam(required = false) String name,
                       @RequestParam(required = false) Village village, Model model ){
                         
@@ -37,7 +37,7 @@ public String details(@PathVariable Long id, Model model) {
         model.addAttribute("character", character);
         return "details"; //returns details.ftlh
     } catch (RuntimeException exception) {
-        model.addAttribute("errorMessage", exception.getMessage() == null ? "Plant not found" : exception.getMessage());
+        model.addAttribute("errorMessage", exception.getMessage() == null ? "Character not found" : exception.getMessage());
         return "error"; // templates/error.ftlh
     }
 } 

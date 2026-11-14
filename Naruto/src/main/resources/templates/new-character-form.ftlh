@@ -32,8 +32,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="shortDescription" class="form-label">Short Description / Backstory:</label>
-                <textarea id="shortDescription" name="shortDescription" class="form-control" rows="4">${character.shortDescription!''}</textarea>
+                <label for="description" class="form-label">Short Description / Backstory:</label>
+                <textarea id="description" name="description" class="form-control" rows="4">${character.shortDescription!''}</textarea>
             </div>
 
             <div class="mb-3">

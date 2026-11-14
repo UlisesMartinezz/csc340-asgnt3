@@ -198,7 +198,13 @@ Response:
 
 ## Deployment
 
-### Render URL
+### MVC Render URL
+
+```
+https://csc340-asgnt3.onrender.com/api/characters
+```
+
+### API Render URL
 
 
 ```
